@@ -8,7 +8,8 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <div id="app">
     <p>{{ items[0].name }}: {{ items[0].price }} * {{ items[0].quantity }}</p>
-    <p>フィルタ処理例 {{ 100000000 | numberWithDelimiter }} </p>
+    <p>小計: {{ totalPrice | numberWithDelimiter }}円</p>
+    <p>合計: {{ totalPriceWithTax | numberWithDelimiter }}円</p>
 </div>
 <script>
 
@@ -42,8 +43,20 @@
           return '0'
         }
         return value.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')
-      }}
+      }
+    },
+    computed: {
+      totalPrice: function() {
+        return this.items.reduce(function(sum,item) {
+          return sum + (item.price * item.quantity)
+        }, 0)
+      },
+      totalPriceWithTax: function() {
+        return Math.floor(this.totalPrice * 1.10)
+      }
+    }
   })
+  window.vm = vm
 
 </script>
 
