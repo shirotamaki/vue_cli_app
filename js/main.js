@@ -5,21 +5,26 @@
     el: '#app',
     data: {
       newItem: '',
-      todos: [{
-        title: 'task 1',
-        isDone: false
-      }, {
-        title: 'task 2',
-        isDone: false
-      }, {
-        title: 'task 3',
-        isDone: true
-      }]
+      // todos: [{
+      //   title: 'task 1',
+      //   isDone: false
+      // }, {
+      //   title: 'task 2',
+      //   isDone: false
+      // }, {
+      //   title: 'task 3',
+      //   isDone: true
+      // }]
+      todos: []
     },
     methods: {
       addItem: function() {
-        this.todos.push(this.newItem)
-        this.newItem = ''
+        var item = {
+          title: this.newItem,
+          isDone: false
+        };
+        this.todos.push(item);
+        this.newItem = '';
       },
       deleteItem: function(index) {
         if (confirm('are you sure?')) {
