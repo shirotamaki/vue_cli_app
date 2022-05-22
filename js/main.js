@@ -1,25 +1,25 @@
-(function() {
-  'use strict';
+(function () {
+  'use strict'
 
   var likeComponent = Vue.extend({
     props: {
       message: {
         type: String,
-        default: 'Like'
-      }
+        default: 'Like',
+      },
     },
-    data: function() {
+    data: function () {
       return {
-        count: 0
+        count: 0,
       }
     },
     template: '<button @click="countUp">{{ message }} {{ count }}</button>',
     methods: {
-      countUp: function() {
-        this.count++;
+      countUp: function () {
+        this.count++
         this.$emit('increment')
-      }
-    }
+      },
+    },
   })
 
   var app_comp = new Vue({
@@ -28,31 +28,31 @@
       'like-component': likeComponent,
     },
     data: {
-      total: 0
+      total: 0,
     },
     methods: {
-      incrementTotal: function() {
-        this.total++;
-      }
-    }
+      incrementTotal: function () {
+        this.total++
+      },
+    },
   })
 
-  var vm = new Vue ({
+  var vm = new Vue({
     el: '#app',
     data: {
       newItem: '',
-      todos: []
+      todos: [],
     },
-      watch: {
-        todos: {
-          handler: function () {
-            localStorage.setItem('todos', JSON.stringify(this.todos)) ;
-          },
-        deep: true
-      }
+    watch: {
+      todos: {
+        handler: function () {
+          localStorage.setItem('todos', JSON.stringify(this.todos))
+        },
+        deep: true,
+      },
     },
-    mounted: function() {
-      this.todos = JSON.parse(localStorage.getItem('todos')) || [];
+    mounted: function () {
+      this.todos = JSON.parse(localStorage.getItem('todos')) || []
     },
     methods: {
       addItem: function () {
@@ -83,4 +83,4 @@
       },
     },
   })
-})();
+})()
