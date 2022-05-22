@@ -5,25 +5,18 @@
     el: '#app',
     data: {
       newItem: '',
-      todos: [{
-        title: 'task 1',
-        isDone: false
-      }, {
-        title: 'task 2',
-        isDone: false
-      }, {
-        title: 'task 3',
-        isDone: true
-      }]
+      todos: []
     },
       watch: {
         todos: {
           handler: function () {
-            localStorage.setItem('todos', JSON.stringify(this.todos))
-            alert('Data saved!')
+            localStorage.setItem('todos', JSON.stringify(this.todos)) ;
           },
-        deep: true,
+        deep: true
       }
+    },
+    mounted: function() {
+      this.todos = JSON.parse(localStorage.getItem('todos')) || [];
     },
     methods: {
       addItem: function () {
