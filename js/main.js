@@ -1,6 +1,16 @@
 (function() {
   'use strict';
 
+  var likeComponent = Vue.extend({
+    template: '<button>Like</button>',
+  })
+  var app_comp = new Vue({
+    el: '#app_comp',
+    components: {
+      'like-component': likeComponent,
+    },
+  })
+
   var vm = new Vue ({
     el: '#app',
     data: {
