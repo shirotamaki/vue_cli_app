@@ -6,21 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Learning Vue3</title>
+    <link rel="stylesheet" href="test.css">
     <script src="https://unpkg.com/vue@3.0.2"></script>
 </head>
 <body>
 
 <div id="app">
-    <input
-            v-bind:value="searchText"
-            v-on:input="searchText = $event.type"
-    >
-    <p>{{ searchText }}</p>
-<!--    <button @click="countUp('Get money!')">Count</button>-->
-<!--    <p>${{ n }}</p>-->
-<!--    <a :href="url">リンク</a>-->
-<!--    <input :value="searchText" @input="searchText = $event.target.value">-->
-<!--    <p>{{ searchText }}</p>-->
+    <p>{{ width }} の半分は {{ halfWidth }}</p>
+    <input type="text" ref="text1">
 </div>
 
 <!--<h1>Hello, Vue :)</h1>-->

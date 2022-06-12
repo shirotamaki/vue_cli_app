@@ -1,0 +1,22 @@
+{
+  "name": "vue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shirotamaki/vue.git"
+  },
+  "author": "shirotamaki <shiro.tamaki63@gmail.com> (https://github.com/shirotamaki)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shirotamaki/vue/issues"
+  },
+  "homepage": "https://github.com/shirotamaki/vue#readme",
+  "dependencies": {
+    "vue": "^3.2.33"
+  }
+}
