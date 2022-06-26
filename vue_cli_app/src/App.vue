@@ -21,6 +21,16 @@ export default {
     AddMemo,
     EditDelete,
   },
+  data() {
+    return {
+      text: '',
+      editIndex: -1,
+      totalMemos: []
+    }
+  },
+  mounted() {
+    
+  }
 }
 </script>
 
