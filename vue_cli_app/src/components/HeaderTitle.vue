@@ -9,3 +9,6 @@ export default {
   props: ['msg']
 }
 </script>
+
+<style>
+</style>
