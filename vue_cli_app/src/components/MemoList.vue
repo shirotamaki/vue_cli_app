@@ -61,9 +61,6 @@ export default {
     }
   },
     computed: {
-    //   totalNumber: function () {
-    //     return this.todos.length
-    //   },
     changeButtonText () {
       return this.editIndex === -1 ? '＋' : '編集を実行'
     },
