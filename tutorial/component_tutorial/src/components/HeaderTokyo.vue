@@ -2,7 +2,10 @@
   <div>
     <h1>{{ title }}</h1>
     <p>{{ text }}</p>
-    <p>{{ username }}</p>
+<!--    <slot name="message"></slot>-->
+    <p>Welcome!! {{ username }}</p>
+    <label for="condition">How are you?</label>
+    <input id="condition" type="text" :value="value" @input="$emit('input',$event.target.value)">
   </div>
 </template>
 
@@ -15,7 +18,8 @@ export default {
     }
   },
   props: {
-    username: String
+    username: String,
+    value: String
   }
 }
 </script>

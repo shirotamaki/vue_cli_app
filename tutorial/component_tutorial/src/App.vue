@@ -1,8 +1,19 @@
 <template>
+  <div>
+  <Header :username="name" v-model="InputData.condition">
+<!--    <template v-slot:message>-->
+<!--      <p>Lets enjoy programming!</p>-->
+<!--    </template>-->
+  </Header>
   <HeaderTokyo :username="name"/>
   <BodyTokyo @add="add1"/>
   <BodyTokyo @add="add2" />
   <p>total: {{ totalcount }}</p>
+  <p>condition : {{ InputData.condition }} </p>
+    <button @click="componentName = 'HeaderTokyo'">Header</button>
+    <button @click="componentName = 'BodyTokyo'">Body</button>
+    <component :is="componentName"></component>
+  </div>
 </template>
 
 <script>
@@ -19,7 +30,11 @@ export default {
       name: 'たまき',
       count1: 0,
       count2: 0,
-      totalcount: 0
+      totalcount: 0,
+      InputData: {
+        condition: ""
+      },
+      componentName: "HeaderTokyo"
     }
   },
   methods: {
@@ -37,4 +52,7 @@ export default {
 
 <style>
 
+p {
+  color: green;
+}
 </style>

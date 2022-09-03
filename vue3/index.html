@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Learning Vue3</title>
+    <title>Vue3</title>
     <link rel="stylesheet" href="test.css">
     <script src="https://unpkg.com/vue@3.0.2"></script>
 </head>
@@ -14,6 +14,24 @@
 <div id="app">
     <p>{{ width }} の半分は {{ halfWidth }}</p>
     <input type="text" ref="text1">
+
+    <ol>
+        <li v-for="item in list">{{ item }}</li>
+    </ol>
+    <div>
+        メソッド
+        <ol>
+            <li> {{ getDate() }}</li>
+            <li> {{ getDate() }}</li>
+            <li> {{ getDate() }}</li>
+        </ol>
+        算出プロパティ
+        <ol>
+            <li>{{ date }}</li>
+            <li>{{ date }}</li>
+            <li>{{ date }}</li>
+        </ol>
+    </div>
 </div>
 
 <!--<h1>Hello, Vue :)</h1>-->
